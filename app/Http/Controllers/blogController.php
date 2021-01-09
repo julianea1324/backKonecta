@@ -44,9 +44,9 @@ class blogController extends Controller
     public function update(Request $request) {
         $validator = Validator::make($request->all(), [
             'id' => 'required',           
-            'short_text' => 'required|string|between:2,200',
-            'long_text' => 'required|string|between:2,1500', 
-            'name' => 'required|string|between:2,100',                   
+            'short_text' => 'required|string|between:1,200',
+            'long_text' => 'required|string|between:1,1500', 
+            'name' => 'required|string|between:1,100',                   
         ]);
         $arr = $validator->validated();
         if($validator->fails()){
